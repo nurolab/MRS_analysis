@@ -1,4 +1,5 @@
 library(xlsx)
+setwd("~/work/Github/nurolab/MRS_analysis")
 cat('\f')
 rm(list=ls())
 of <- "MRS_data.xlsx"
@@ -30,6 +31,4 @@ if(file.exists(of))
 for(i in 1:sheets){
     write.xlsx(data <- fill(), file = of, sheetName = stringr::str_glue("Sheet",toString(i)), col.names = T, row.names = F, append = T)
 }
-hist(data[,3])
-boxplot(data[,3])
 cat("\fData file is now available. Filename :",of)
