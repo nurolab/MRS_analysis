@@ -9,7 +9,7 @@ data <- as.matrix(data)
 combins <- combn(ncol(data), 2)
 rows <- ncol(combins)
 t_stats <- matrix(nrow = rows, ncol = 12, data = NA)
-colnames(t_stats) <- c("X","Y","T-statistic","Parameter","P-value","Method","Alternative",
+colnames(t_stats) <- c("X","Y","T-statistic","Parameter","P-value","MetShod","Alternative",
                        "Null-value","Conf. Int 1","Conf. Int 2","Estimate 1","Estimate 2")
 for(i in 1:rows){
     t_stat <- t.test(data[,combins[1,i]],data[,combins[2,i]])
